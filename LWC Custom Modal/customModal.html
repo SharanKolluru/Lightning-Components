@@ -1,0 +1,26 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="tile-container">
+        <template for:each={numbers} for:item="number">
+            <div key={number} class="tile" onclick={handleTileClick}>
+                <lightning-card>
+                    {number}
+                </lightning-card>
+            </div>
+        </template>
+    </div>
+
+    <template if:true={selectedNumber}>
+        <div class="expanded-view">
+            <div class="number-info">
+                Additional information for Number {selectedNumber}
+            </div>
+            <!-- class="close-button"  Back<lightning-button-icon label="Back" variant="base" size="large" icon-name="action:back" alternative-text="Back">Back</lightning-button-icon>-->
+            <div class="close-button">
+                <lightning-button variant="brand" label="Back" title="Back" onclick={closeExpandedView}
+                    icon-name="action:back" alternative-text="Back">
+                </lightning-button>
+            </div>
+        </div>
+    </template>
+</template>
